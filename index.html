@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Study Planner - Hello Kitty Style</title>
+    <meta name="description" content="A cute Hello Kitty-themed study planner to help students organize tasks, track progress, and stay motivated.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating cute elements -->
+    <div class="floating-elements">
+        <div class="floating-emoji" style="top: 20%; right: 10%;">🌸</div>
+        <div class="floating-emoji" style="bottom: 30%; left: 15%;">✨</div>
+        <div class="floating-emoji" style="top: 60%; right: 20%;">🎀</div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <span style="font-size: 2rem;">🌟</span>
+                <h1>Smart Study Planner</h1>
+                <span style="font-size: 2rem;">💖</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="tasks">📝 Tasks</button>
+                <button class="nav-tab" data-tab="calendar">📅 Calendar</button>
+                <button class="nav-tab" data-tab="progress">📊 Progress</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Tasks Section -->
+            <section id="tasks" class="section active">
+                <div class="card">
+                    <h2>📚 Add New Task</h2>
+                    <form class="task-form" id="taskForm">
+                        <div class="form-group">
+                            <label for="taskTitle">Task Title</label>
+                            <input type="text" id="taskTitle" placeholder="Enter your study task..." required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="taskDueDate">Due Date</label>
+                                <input type="date" id="taskDueDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="taskPriority">Priority</label>
+                                <select id="taskPriority">
+                                    <option value="low">Low</option>
+                                    <option value="medium" selected>Medium</option>
+                                    <option value="high">High</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="taskCategory">Category</label>
+                                <select id="taskCategory">
+                                    <option value="homework">Homework</option>
+                                    <option value="project">Project</option>
+                                    <option value="exam">Exam Prep</option>
+                                    <option value="reading">Reading</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskDescription">Description (optional)</label>
+                            <textarea id="taskDescription" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">➕ Add Task</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h2>📋 Your Study Tasks</h2>
+                    <div id="taskList" class="task-list"></div>
+                </div>
+            </section>
+
+            <!-- Calendar Section -->
+            <section id="calendar" class="section">
+                <div class="card">
+                    <h2>📅 Study Calendar</h2>
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <button id="prevMonth" class="btn btn-secondary btn-small">← Previous</button>
+                        <span id="currentMonth"></span>
+                        <button id="nextMonth" class="btn btn-secondary btn-small">Next →</button>
+                    </div>
+                    <div class="calendar-grid" id="calendar"></div>
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section id="progress" class="section">
+                <div class="progress-grid">
+                    <div class="progress-card">
+                        <div class="progress-number" id="completionRate">0%</div>
+                        <h3>Completion Rate</h3>
+                        <div class="progress-bar"><div class="progress-fill" id="completionBar" style="width: 0%"></div></div>
+                        <p id="motivationalMessage">Ready to start your study journey? 🚀</p>
+                    </div>
+                    <div class="progress-card">
+                        <div class="progress-number" id="totalTasks">0</div>
+                        <h3>Total Tasks</h3>
+                        <p>📚 Keep adding study goals!</p>
+                    </div>
+                    <div class="progress-card">
+                        <div class="progress-number" id="completedTasks">0</div>
+                        <h3>Completed</h3>
+                        <p>✨ Great progress!</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🌟 Study Achievements</h3>
+                    <div id="achievements"><p>Complete your first task to unlock achievements! 💖</p></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
